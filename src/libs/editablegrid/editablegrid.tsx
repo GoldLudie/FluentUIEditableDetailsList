@@ -1746,7 +1746,6 @@ const EditableGrid = (props: Props) => {
             {showFilterCallout && filterCalloutComponent}
             <div className={mergeStyles({ height: props.height != null ? props.height : '70vh', width: props.width != null ? props.width : '130vh', position: 'relative', backgroundColor: 'white', })}>
                 <ScrollablePane scrollbarVisibility={ScrollbarVisibility.auto}>
-                    <MarqueeSelection selection={_selection}>
                         <DetailsList
                             compact={true}
                             items={defaultGridData.length > 0 ? defaultGridData.filter((x) => (x._grid_row_operation_ != Operation.Delete) && (x._is_filtered_in_ == true) && (x._is_filtered_in_grid_search_ == true) && (x._is_filtered_in_column_filter_ == true)) : []}
@@ -1814,7 +1813,6 @@ const EditableGrid = (props: Props) => {
                             useReducedRowRenderer={props.useReducedRowRenderer}
                             viewport={props.viewport}
                         />
-                    </MarqueeSelection>
                 </ScrollablePane>
             </div>
             <Dialog hidden={!dialogContent} onDismiss={CloseRenameDialog} closeButtonAriaLabel="Close">
